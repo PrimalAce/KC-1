@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Himg from '../assets/hero.png';
 
-const Hero = () => {
+const Hero = ({ onSkipToReg }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
@@ -27,10 +27,19 @@ const Hero = () => {
           >
             Get Started
           </button>
+
+          <button 
+            onClick={onSkipToReg}
+            type="button"
+            className="mt-4 bg-blue-500 text-white px-6 py-2 rounded hover:bg-blue-600"
+          >
+            Skip to reg
+          </button>
+
         </div>
       </div>
       {isModalOpen && (
-  <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
+  <div className="fixed inset-0 bg-black bg-opacity-10 flex justify-center items-center z-50">
     <div className="bg-white p-8 rounded-2xl shadow-2xl max-w-md w-full relative animate-fadeIn">
       {/* Close Button */}
       <button 
